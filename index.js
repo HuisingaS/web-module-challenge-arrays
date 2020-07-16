@@ -117,19 +117,15 @@ For example, removeFlavorByName(originalFlavors, "Vanilla") would return an arra
 Hint: You can use .splice() for this */
 
 function removeFlavorByName(arr, flavor){
-    let index = arr.indexOf(flavor)
-    arr.splice(index, 1)
-    console.log(arr)
+    let index = arr.indexOf(flavor);
+    arr.splice(index, 1);
+    console.log(arr);
 }
-removeFlavorByName(originalFlavors,`Maple Nut`)
+removeFlavorByName(originalFlavors,`Maple Nut`);
 
 
 
 /* Task 6: With all of these changes going on, we don't want to lose track of the actual, original 31 flavors. Write a function called copy that makes a copy of the array. 
-
-
-
-
 
 Your function should accept: 
 
@@ -138,12 +134,11 @@ Your function should accept:
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
 
-function copy(arrayOld,arrayNew){
-
-    /*code here*/
-
+function copy(newArray, oldArray) {
+    newArray = [...oldArray];
+    return newArray;
 }
-
+console.log(copy("ogFlavors", originalFlavors));
 
 
 
@@ -162,12 +157,16 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
 
-function filterByWord(/*code here*/){
-
-    /*code here*/
-
+function filterByWord(arr, flavorType){
+    const newArray = [];
+    for(i = 0; i < arr.length; i++) {
+        if(arr[i].includes(flavorType)) {
+           newArray.push(arr[i]);
+        }
+    }
+    return newArray;
 }
-
+console.log(filterByWord(originalFlavors, `Chocolate`));
 
 
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/ 
